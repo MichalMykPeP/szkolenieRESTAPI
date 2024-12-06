@@ -1,0 +1,7 @@
+.venv
+.env
+/.idea
+__pycache__
+
+sandbox*
+result.xml

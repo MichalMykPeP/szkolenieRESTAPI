@@ -1,0 +1,34 @@
+[project]
+name = "szkolenierestapi"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "pydantic-settings>=2.6.1",
+    "pydantic>=2.10.3",
+    "pytest>=8.3.4",
+    "requests>=2.32.3",
+    "pytest-check>=2.4.1",
+]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.8.1",
+]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 120
+
+[tool.ruff.lint.isort]
+force-single-line = true
+
+[tool.ruff.lint]
+select = ["B", "E", "F", "I", "UP", "SIM"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "--tb=short --junitxml=result.xml"
+markers = ["smoke: Smoke tests", "wip: Work in progress"]
